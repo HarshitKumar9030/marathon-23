@@ -39,7 +39,23 @@ setInterval(() => {
   const seconds = 5;
   for (let i = seconds; i >= 0; i--) {
     setTimeout(function () {
-      document.getElementById("secs").innerHTML = i === 0 ? "5" : i;
+        let dots = "...";
+        if(i === 5){
+            dots = "";
+        }
+        if(i === 4){
+            dots = ".";
+        }
+        if(i === 3){
+            dots = "..";
+        }
+        if(i === 2){
+            dots = "...";
+        }
+        if(i === 1){
+            dots = "....";
+        }
+      document.getElementById("secs").innerHTML = i === 0 ? "5" : i + dots;
 
     }, (seconds - i) * 1000);
   }
