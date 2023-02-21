@@ -1,5 +1,5 @@
-const YOUR_INITIAL_LATITUDE = 51.505;
-const YOUR_INITIAL_LONGITUDE = -0.09;
+const YOUR_INITIAL_LATITUDE = 28.2014;
+const YOUR_INITIAL_LONGITUDE = 76.8276;
 
 const map = L.map("map").setView(
   [YOUR_INITIAL_LATITUDE, YOUR_INITIAL_LONGITUDE],
@@ -9,6 +9,14 @@ const map = L.map("map").setView(
 const marker = L.marker([YOUR_INITIAL_LATITUDE, YOUR_INITIAL_LONGITUDE]).addTo(
   map
 );
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+
+marker.bindPopup("<b>There you are!</b><br>Find Ya see.").openPopup();
 
 setInterval(() => {
   fetch("http://localhost:3000/location", {
@@ -39,24 +47,23 @@ setInterval(() => {
   const seconds = 5;
   for (let i = seconds; i >= 0; i--) {
     setTimeout(function () {
-        let dots = "...";
-        if(i === 5){
-            dots = "";
-        }
-        if(i === 4){
-            dots = ".";
-        }
-        if(i === 3){
-            dots = "..";
-        }
-        if(i === 2){
-            dots = "...";
-        }
-        if(i === 1){
-            dots = "....";
-        }
+      let dots = "...";
+      if (i === 5) {
+        dots = "";
+      }
+      if (i === 4) {
+        dots = ".";
+      }
+      if (i === 3) {
+        dots = "..";
+      }
+      if (i === 2) {
+        dots = "...";
+      }
+      if (i === 1) {
+        dots = "....";
+      }
       document.getElementById("secs").innerHTML = i === 0 ? "5" : i + dots;
-
     }, (seconds - i) * 1000);
   }
 }, 5000);

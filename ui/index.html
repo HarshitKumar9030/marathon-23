@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Dog Location</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <link rel="stylesheet" href="app.css">
-    </head>
-    <body>
-
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
     <div class="main">
-        <div class="top">
-            <h1>Location Detection</h1>
-            <ul>
-                <li id="paper">Paper</li>
-                <li>Abstract</li>
-                <li>About Us</li>
-                <li>Atl Marathon</li>
-            </ul>
+      <div class="top">
+        <h1>Location Detection</h1>
+        <ul>
+          <li id="paper">Paper</li>
+          <li>Abstract</li>
+          <li>About Us</li>
+          <li>Atl Marathon</li>
+        </ul>
+      </div>
+      <div class="mapContainer">
+        <div class="text">
+          Updating in
+          <div id="secs"></div>
         </div>
-        <div class="mapContainer">
-            <div class="text">
-                Updating in <div id="secs"></div>
-            </div>
-            <div id="map"></div>
-            <div id="coordinates"></div>
-        </div>
+        <div id="map"></div>
+        <div id="coordinates"></div>
+      </div>
     </div>
     <footer>
-        <p>Crafted with 💖 and care by <a href="https://www.harshitkumar.tech" target="_blank" rel="noopener noreferrer">Harshit Kumar</a>.</p>
-        <p class="mt-2">&copy; 2023 - Harshit Kumar</p>
+      <p>
+        Crafted with 💖 and care by
+        <a
+          href="https://www.harshitkumar.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Harshit Kumar</a
+        >.
+      </p>
+      <p class="mt-2">&copy; 2023 - Harshit Kumar</p>
     </footer>
 
     <!-- Script's -->
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="app.js"></script>
     <script src="redirects.js"></script>
   </body>
